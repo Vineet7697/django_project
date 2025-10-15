@@ -20,7 +20,12 @@ from App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('jsonresponse1/',views.jsonresponse1),
-    path('jsonresponse2/',views.jsonresponse2),
-     path('employee_list/', views.employee_list, name='employee_list'),
+    path('', views.home, name='home'), 
+    path('about/', views.about, name='about'),
+    path('redirect1/',views.redirect1,name='redirect1'),
+    path('redirect3/',views.redirect3,name='redirect3'),
+    path('redirect4/',views.redirect4),
+    path('redirect5/',views.redirect5,name='redirect5'),
+    path('redirect6/<str:name>/',views.redirect6,name='redirect6'),
+    path('redirect7_permanently/',views.redirect7_permanently,name='redirect7_permanently'),
 ]

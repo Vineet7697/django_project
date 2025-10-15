@@ -19,4 +19,8 @@ from django.urls import path
 from App import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('render1/',views.render1, name='render1'),
+    path('render2/',views.render2, name='render2'),
+    path('render3/',views.render3,name='render3'),
+    path('render4/',views.render4,name='render4'),
 ]
