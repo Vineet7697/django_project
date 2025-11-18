@@ -1,0 +1,22 @@
+
+
+
+    <form action="{% url 'formdata' %}" enctype="multipart/form-data" method="POST">
+       {% csrf_token %}
+       name : <input type="text" name="name" id="name" placeholder="name"> <br> <br>
+       email : <input type="email" name="email" id="email" placeholder="email"> <br> <br>
+       mobile_Number : <input type="number" name="number" id="number" placeholder="mobile number"> <br> <br>
+       image :  <input type="file" name="image" id="image" accept="image/*"><br><br> 
+       document : <input type="file" name="file" id="file" placeholder="upload file" accept=".jpg"> <br> <br>
+       audio : <input type="file" name="audio" id="audio" accept="audio/*"><br><br> 
+       video : <input type="file" name="video" id="video" accept="video/*"><br><br> 
+       description : <textarea name="des" id="des"></textarea> <br><br> 
+
+       
+       
+        <button type="submit">Submit</button>
+       
+     </form>
+
+
+

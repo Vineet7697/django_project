@@ -1,0 +1,49 @@
+
+{% comment %} for css {% endcomment %}
+
+{% load  static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock css %}
+
+
+
+{% block title %}
+    <title>landingpage</title>
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+
+    <form action="{% url 'formdata' %}" enctype="multipart/form-data" method="post">
+{% csrf_token %}
+       Name: <input type="text" name="name" id="name" placeholder="name"> <br> <br>
+       email: <input type="email" name="email" id="email" placeholder="email"> <br> <br>
+       mobile Number: <input type="number" name="number" id="number" placeholder="mobile number"> <br> <br>
+       File: <input type="file" name="file" id="file" placeholder="upload file" accept=".jpg"> <br> <br>
+       image:  <input type="file" name="image" id="image" accept="image/*"><br><br> 
+       audio: <input type="file" name="audio" id="audio" accept="audio/*"><br><br> 
+       video: <input type="file" name="video" id="video" accept="video/*"><br><br> 
+       description: <textarea name="des" id="des"></textarea> <br><br> 
+
+       
+       
+        <button type="submit">Submit</button>
+       
+     </form>
+
+
+
+
+{% block js %}
+
+ <script src="{% static 'js/script.js' %}"></script>
+
+{% endblock js %}
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% comment %} for css {% endcomment %}
+
+{% load  static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock css %}
+
+
+
+{% block title %}
+    <title>landingpage</title>
+{% endblock title %}
+
+
+{% block content %}
+{% include "subbase.html" %}
+
+
+     <form action="{% url 'select1' %}">
+
+        <label>Qualification</label>
+
+        <select name="selectoption">
+            <option value="B.tech">B.tech</option>
+            <option value="M.tech">M.tech</option>
+            <option value="BSC">BSC</option>
+            <option value="12th">12th</option>
+            <option value="10th">10th</option>
+         
+        </select>
+        <button type="submit">Submit</button>
+     </form>
+
+
+
+
+{% block js %}
+
+ <script src="{% static 'js/script.js' %}"></script>
+
+{% endblock js %}
+
+{% endblock content %}

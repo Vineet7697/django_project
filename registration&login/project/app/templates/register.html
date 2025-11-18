@@ -1,0 +1,92 @@
+{% extends "landing.html" %}
+
+{% block content %}
+
+{{x}}
+
+<h2>Registration Form</h2>
+
+<form action="{% url 'registerdata' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <!-- Name -->
+  <label for="name">Full Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <!-- Email -->
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <!-- Contact -->
+  <label for="contact">Contact Number:</label><br>
+  <input type="tel" id="contact" name="contact_number"><br><br>
+
+  <!-- Details -->
+  <label for="details">Details / About You:</label><br>
+  <textarea id="details" name="description" rows="4" cols="40"></textarea><br><br>
+
+  <!-- Gender -->
+ <label>Gender:</label><br>
+<input type="radio" name="gender" value="M" id="male">
+<label for="male">Male</label><br>
+
+<input type="radio" name="gender" value="F" id="female">
+<label for="female">Female</label><br>
+
+<input type="radio" name="gender" value="O" id="other">
+<label for="other">Other</label><br>
+
+
+  <!-- Qualification -->
+  <label>Qualification:</label><br>
+  <input type="checkbox" id="10th" name="qualification" value="10th">
+  <label for="10th">10th</label><br>
+  <input type="checkbox" id="12th" name="qualification" value="12th">
+  <label for="12th">12th</label><br>
+  <input type="checkbox" id="ug" name="qualification" value="ug">
+  <label for="ug">Undergraduate</label><br>
+  <input type="checkbox" id="pg" name="qualification" value="pg">
+  <label for="pg">Postgraduate</label><br><br>
+
+  <!-- Higher Education -->
+  <label for="education">Higher Education:</label><br>
+  <select id="education" name="education">
+    <option value="">--Select--</option>
+    <option value="bsc">B.Sc</option>
+    <option value="ba">B.A</option>
+    <option value="btech">B.Tech</option>
+    <option value="msc">M.Sc</option>
+    <option value="ma">M.A</option>
+    <option value="mtech">M.Tech</option>
+    <option value="mba">MBA</option>
+    <option value="phd">PhD</option>
+  </select><br><br>
+
+  <!-- File Uploads -->
+  <label for="profile_pic">Upload Profile Picture:</label><br>
+  <input type="file" id="profile_pic" name="profile_pic" accept="image/*"><br><br>
+
+  <label for="document">Upload Document:</label><br>
+  <input type="file" id="document" name="document" accept=".pdf,.doc,.docx"><br><br>
+
+  <label for="audio">Upload Audio:</label><br>
+  <input type="file" id="audio" name="audio" accept="audio/*"><br><br>
+
+  <label for="video">Upload Video:</label><br>
+  <input type="file" id="video" name="video" accept="video/*"><br><br>
+
+  {{pmsg}}
+
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password" accept="password/*"><br><br>
+
+  <label for="cpassword">Confirm password:</label><br>
+  <input type="password" id="password" name="cpassword" accept="password/*"><br><br>
+
+  <!-- Buttons -->
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+   
+</form>
+
+{% endblock content %}

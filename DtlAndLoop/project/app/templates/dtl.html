@@ -1,0 +1,130 @@
+{% comment %} {{ name }} 
+{{ name|add:"2" }}  {% endcomment %}
+
+
+{% comment %} {{value}}
+{{value|title}} {% endcomment %}
+
+
+{% comment %} {{value}}
+{{value|truncatechars:7}} {% endcomment %}
+
+ {% comment %} {{value}}
+{{ value|truncatewords:2 }}   {% endcomment %}
+
+
+ {% comment %} {{value}}
+{{ value|wordcount }}  {% endcomment %}
+
+
+ {% comment %} {{value}}
+{{ value|lower }}  {% endcomment %}
+
+{% comment %} 
+ {{value}}
+{{ value|upper }}   {% endcomment %}
+
+ {% comment %} {{key}}
+ {{ key|capfirst }} {% endcomment %}
+
+
+ {% comment %} {{key}}
+<pre> {{ key |center:"15" }} </pre>  {% endcomment %}
+{% comment %} 
+
+ {{key}}
+<pre> {{ key |ljust:"10" }} </pre> {% endcomment %}
+
+
+ {% comment %} {{key}}
+<pre> {{ value|rjust:"10" }} </pre> {% endcomment %}
+{% comment %} 
+ {{value}}
+{{ value|cut:" " }}  {% endcomment %}
+
+{% comment %} 
+ {{value}}
+{{ value|join:" // " }}  {% endcomment %}
+
+
+ {% comment %} {{value}}
+{{ value|default:"nothing" }}  {% endcomment %}
+
+
+ {% comment %} {{value}}
+{{ value|default_if_none:"nothing" }}  {% endcomment %}
+
+ {% comment %} {{value}}
+{{ value|divisibleby:"3" }} {% endcomment %}
+
+
+ {% comment %} {{value}}
+{{ value|first }}  {% endcomment %}
+
+{% comment %} 
+ {{value}}
+{{ value|last }}  {% endcomment %}
+
+ {% comment %} {{value}}
+{{ value|length }} {% endcomment %}
+
+
+
+ {% comment %} {{value}}
+{{ value|random }} 
+
+ {{value}}
+{{ some_list|slice:":2" }} 
+
+ {{value}}
+{{ value|slugify }} {% endcomment %}
+
+
+
+{% comment %} For loop {% endcomment %}
+
+{{name}} <br/>
+{% comment %} {% for i in name %}
+{{i}} <br/>
+{% endfor %} {% endcomment %}
+
+<br/>
+{% comment %} {% for i in l %}
+{{i}} <br/>
+{% endfor %} {% endcomment %}
+
+
+{% comment %} {% for i in l %}
+{{forloop.counter}}.{{i}} <br/>
+{% endfor %} {% endcomment %}
+
+{% comment %} 
+{% for i in l %}
+{{forloop.counter0}}.{{i}} <br/>
+{% endfor %} {% endcomment %}
+
+
+{% comment %} {% for i in l %}
+{{forloop.revcounter}}.{{i}} <br/>
+{% endfor %} {% endcomment %}
+
+{% comment %} {% for i in l %}
+{{forloop.revcounter0}}.{{i}} <br/>
+{% endfor %} {% endcomment %}
+
+
+{% comment %} if else elif {% endcomment %}
+
+{% comment %} {% if name %}
+welcome {{name}}
+
+{% else  %}
+welcome guest
+
+{% endif %} {% endcomment %}
+
+{% comment %} with tag {% endcomment %}
+{% with x=age %}
+{{x|add:'10'}} <br/>
+{{age}}
+{% endwith %}

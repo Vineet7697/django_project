@@ -1,0 +1,49 @@
+
+{% comment %} for css {% endcomment %}
+
+{% load  static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock css %}
+
+
+
+{% block title %}
+    <title>landingpage</title>
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+      <form action="{% url 'checkbox1' %}">
+
+        <label>Hobbies:</label> <br>
+          <input type="checkbox" name="check" id="cricket">
+          <label for="cricket">cricket</label> <br>
+          <input type="checkbox" name="check" id="footbal">
+          <label for="footbal">footbal</label> <br>
+          <input type="checkbox" name="check" id="hockey">
+          <label for="hockey">hockey</label> <br>
+          <input type="checkbox" name="check" id="kabaddi">
+          <label for="kabaddi">kabaddi</label> <br>
+        
+        <button type="submit">Submit</button>
+     </form>
+
+
+  
+
+
+
+
+{% block js %}
+
+ <script src="{% static 'js/script.js' %}"></script>
+
+{% endblock js %}
+
+{% endblock content %}
