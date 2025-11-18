@@ -85,9 +85,9 @@ def logindata(req):
             audio=userdata.audio
             video=userdata.video
             password=userdata.password
-            print(name,email,contact,gender,description,qualification,higher_education,profile_picture,document,audio,video,password)
+            # print(name,email,contact,gender,description,qualification,higher_education,profile_picture,document,audio,video,password)
             data={'name':name,'email':email,'contact':contact,'gender':gender,'description':description,'qualification':qualification,'higher_education':higher_education,'profile_picture':profile_picture,
-                  'document':document,'audio':audio,'video':video}
+                  'document':document,'audio':audio,'video':video,'password':password}
             
             if password==lp:
                 # return render (req,'dashboard.html',data) #  error ligindata page is same page
@@ -105,7 +105,7 @@ def logindata(req):
             return render(req,'register.html',{'msg':msg,'email':le})
         
 def dashboard(req):
-    print(req.GET)
+    # print(req.GET)
     e=req.GET.get('email')
     p=req.GET.get('password')
     
@@ -116,14 +116,17 @@ def dashboard(req):
         d=req.GET.get('description')
         q=req.GET.get('qualification')
         hg=req.GET.get('higher_education')
-        p=req.GET.get('profile_picture')
+        pro=req.GET.get('profile_picture')
         doc=req.GET.get('document')
         a=req.GET.get('audio')
         v=req.GET.get('video')
-        data={'name':n,'contact':c,'gender':g,'description':d,'qualification':q,'higher_education':hg,'profile_picture':p,'document':doc,'audio':a,'video':v}
+        data={'name':n,'contact':c,'gender':g,'description':d,'qualification':q,'higher_education':hg,
+            'profile_picture':pro,'document':doc,'audio':a,'video':v,'password':p}
         return render (req,'dashboard.html',data)
+    
     else:
-        return render(req,'login.html')
+        # return render(req,'login.html')
+        return redirect('login')
     
             
         
