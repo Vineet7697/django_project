@@ -1,0 +1,6 @@
+<form action="{% url 'savedata' %}" method='POST'>
+     {% csrf_token %}
+     {{form}}
+     <button type="submit">Register</button>
+   
+</form>
