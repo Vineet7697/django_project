@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .views import *
 from app.models import Student
-from .forms import StudentForm
+from .forms import StudentForm,LoginForm
 
 # Create your views here.
 
@@ -22,4 +22,17 @@ def registerData(req):
 def savedata(req):
     if req.method=='POST':
         form=StudentForm(req.POST or None)
-        print(form)
+        # print(form)
+        if form.is_valid():
+            # print(form.cleaned_data)
+            n=form.cleaned_data['name']
+            a=form.cleaned_data.get('age')
+            print(n,a)
+            form.save()
+            # return render(req,'landing.html',{'msg':'registration is done'})
+            return redirect('login')
+        
+def login(req):
+    lf=LoginForm()
+    return render(req,'login.html',{'lform':lf})
+    

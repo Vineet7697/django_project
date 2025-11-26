@@ -1,0 +1,49 @@
+{% comment %} {{data1}}
+<br/>
+{{data2}} {% endcomment %}
+
+
+<table border='1'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data1 %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.father_name }}</td>
+            <td>{{ i.mobile }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.course }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<table border='1'>
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Roll No</th>
+            <th>Alloted date</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data2 %}
+        <tr>
+            <td>{{ i.student }}</td>
+            <td>{{ i.roll_no }}</td>
+            <td>{{ i.allotted_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
