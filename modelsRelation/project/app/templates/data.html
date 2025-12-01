@@ -12,6 +12,8 @@
             <th>Email</th>
             <th>Course</th>
             <th>roll no</th>
+            <th>allotted_date</th>
+            <th>Branch</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +25,9 @@
             <td>{{ i.email }}</td>
             <td>{{ i.course }}</td>
             <td>{{ i.student.roll_no }}</td>
+            
+            <td>{{ i.student.allotted_date }}</td>
+            <td>{{ i.branch.b_name }}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -36,6 +41,11 @@
             <th>Student</th>
             <th>Roll No</th>
             <th>Alloted date</th>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Course</th>
             
         </tr>
     </thead>
@@ -45,6 +55,11 @@
             <td>{{ i.student }}</td>
             <td>{{ i.roll_no }}</td>
             <td>{{ i.allotted_date }}</td>
+             <td>{{ i.student.name }}</td>
+            <td>{{ i.student.father_name }}</td>
+            <td>{{ i.student.mobile }}</td>
+            <td>{{ i.student.email }}</td>
+            <td>{{ i.student.course }}</td>
         </tr>
         {% endfor %}
     </tbody>

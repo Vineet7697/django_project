@@ -6,6 +6,7 @@ from .models import *
 def all_data(req):
     # Stu_data=Students.objects.all() #parent to child access
     Stu_data=Students.objects.select_related('student') #join the two or multiple  table select_related
+    # print(Stu_data.query)
     # for i in Stu_data:
         # print(i.name,i.father_name,i.email,i.mobile,i.course,i.student.roll_no,i.student.allotted_date)
         
