@@ -29,3 +29,11 @@ class UniversityRoll(models.Model):
     #     return f"{self.roll_no} → {self.student.name}"
     
     
+class Student1(models.Model):
+    stu_name=models.CharField( max_length=50)
+
+class Course(models.Model):
+    c_name=models.CharField( max_length=50)
+    s_name=models.ManyToManyField(Student1, related_name='curs')
+    
+    

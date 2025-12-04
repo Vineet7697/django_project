@@ -20,7 +20,8 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.all_data,name='all_data'),
+    # path('', views.all_data,name='all_data'),
+    path('', views.forward_data,name='all_data'),
     
     
 ]
