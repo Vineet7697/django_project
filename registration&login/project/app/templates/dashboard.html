@@ -1,1 +1,15 @@
-{{name}}
+{{name}} {{id}}
+<form action="{% url 'query' pk=data.id %}">
+
+<button type="submit">Add Query</button>
+
+</form>
+{% if query %}
+<form action="">
+    <label for="">Name</label>
+    <input type="text" value="{{data.name}}">
+    <label for="">Email</label>
+    <input type="email" value="{{data.email}}">
+    <button type="submit">edit Query</button>
+</form>
+{% endif %}

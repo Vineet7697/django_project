@@ -73,6 +73,7 @@ def logindata(req):
         user=Registration.objects.filter(email=le)
         if user:
             userdata=Registration.objects.get(email=le)
+            id=userdata.id
             name=userdata.full_name
             email=userdata.email
             contact=userdata.contact_number
@@ -86,7 +87,7 @@ def logindata(req):
             video=userdata.video
             password=userdata.password
             # print(name,email,contact,gender,description,qualification,higher_education,profile_picture,document,audio,video,password)
-            data={'name':name,'email':email,'contact':contact,'gender':gender,'description':description,'qualification':qualification,'higher_education':higher_education,'profile_picture':profile_picture,
+            data={'id':id, 'name':name,'email':email,'contact':contact,'gender':gender,'description':description,'qualification':qualification,'higher_education':higher_education,'profile_picture':profile_picture,
                   'document':document,'audio':audio,'video':video,'password':password}
             
             if password==lp:
@@ -110,6 +111,7 @@ def dashboard(req):
     p=req.GET.get('password')
     
     if e and p:
+        i=req.GET.get('id')
         n=req.GET.get('name')
         c=req.GET.get('contact')
         g=req.GET.get('gender')
@@ -121,12 +123,17 @@ def dashboard(req):
         a=req.GET.get('audio')
         v=req.GET.get('video')
         data={'name':n,'contact':c,'gender':g,'description':d,'qualification':q,'higher_education':hg,
-            'profile_picture':pro,'document':doc,'audio':a,'video':v,'password':p}
-        return render (req,'dashboard.html',data)
+            'profile_picture':pro,'document':doc,'audio':a,'video':v,'password':p,'id':i}
+        return render (req,'dashboard.html',{'data':data})
     
     else:
         # return render(req,'login.html')
         return redirect('login')
     
             
-
+def query(req,pk):
+    print(pk)
+    userdata=Registration.objects.get(id=pk)
+    data={'id':userdata.id,'name':userdata.full_name,'email':userdata.email,'contact':userdata.contact_number,'gender':userdata.gender,'description':userdata.description,'qualification':userdata.qualification,'higher_education':userdata.higher_education,
+            'profile_picture':userdata.profile_picture,'document':userdata.document,'audio':userdata.audio,'video':userdata.video,'password':userdata.password}
+    return render (req,'dashboard.html',{'data':data,'query':pk})
